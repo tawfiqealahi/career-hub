@@ -19,7 +19,7 @@ const FeaturedJobs = () => {
         {
             jobs.map(job=> <Job
             key={job.id}
-            job={job}
+        job={job}
             ></Job>)
         }
     </div>
