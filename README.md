@@ -1,4 +1,7 @@
-# React + Vite
+# Career Hub (React + Vite)
+
+# use react Icons from https://react-icons.github.io/react-icons/search/#q=currency
+Use react toastify from  https://fkhadra.github.io/react-toastify/installation
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
