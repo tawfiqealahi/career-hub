@@ -72,7 +72,7 @@ const AppliedJobs = () => {
 
         <ul className='grid md:grid-cols-3 gap-4 my-5'>
           {
-            displayJobs.map(job=> <li className='border border rounded-md bg-zinc-700 text-center' key={job.id} >
+            displayJobs.map(job=> <li className='border  rounded-md bg-zinc-700 text-center' key={job.id} >
               <h2 className='font-bold text-4xl'>{job.job_title} </h2>
               <h4 className='text-xl'>{job.company_name} </h4>
               <span className='text-lg text-green-400'> {job.remote_or_onsite} </span>
