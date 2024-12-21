@@ -16,7 +16,7 @@ const JobDetails = () => {
 
     // react toastify 
     const handleApplyJob = () =>{ 
-        saveJobApplication(id);
+        saveJobApplication(idInt);
         toast("You have applied successfully")
 
     };
