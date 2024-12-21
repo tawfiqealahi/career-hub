@@ -33,7 +33,7 @@ const CategoryList = () => {
   ]
   return (
     <div  className="text-center">
-        <h2 className="text-5xl font-extrabold mt-11 mb-5 ">Job Category List</h2>
+        <h2 className="text-primary text-5xl font-extrabold mt-11 mb-5 ">Job Category List</h2>
         <p >Explore thousand of job oppertunities with all the information tou need.Its Your future</p>
         <div className='grid grid-cols-4 gap-2 my-11'>
        {

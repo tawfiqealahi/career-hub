@@ -57,18 +57,20 @@ const AppliedJobs = () => {
    }
   } ,[jobs])
   return (
-    <div>
-        <h1 className='text-2xl' >Job I Applied: {appliedJobs.length}</h1>
+    
+        <div className='text-center'>
+        <h1 className='text-5xl font-extrabold mt-11 mb-5 ' >Job I Applied: {appliedJobs.length}</h1>
         
 
-        <details className="dropdown">
-  <summary className="btn m-1">Job Type</summary>
-  <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+        <details className="dropdown ">
+  <summary className="btn m-1 ">Job Type</summary>
+  <ul className="menu  dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
     <li onClick={()=>handleJobsFilter('all')} ><a>All</a></li>
     <li onClick={()=>handleJobsFilter('remote')} ><a>Remote</a></li>
     <li onClick={()=>handleJobsFilter('onsite')} ><a>On Site</a></li>
   </ul>
 </details>
+        
 
         <ul className='grid md:grid-cols-3 gap-4 my-5'>
           {
