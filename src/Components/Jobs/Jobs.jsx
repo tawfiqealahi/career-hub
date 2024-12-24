@@ -1,33 +1,53 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { MdOutlineLocationOn } from 'react-icons/md';
+import { PiCurrencyCircleDollar } from 'react-icons/pi';
+import { Link, useLoaderData } from 'react-router-dom'
 
 const Jobs = () => {
-     const [fade, setFade] = useState(false);
- 
-     useEffect(() => {
-       const timeout = setTimeout(() => setFade(true), 500); // Trigger fade-in effect
-       return () => clearTimeout(timeout);
-     }, []);
-   
-     return (
-       <div className="flex items-center  justify-center h-screen ">
-         <div
-           className={`text-center p-10 border border-green-400 rounded-lg shadow-xl text-green-500 transform transition-transform duration-1000 ${
-             fade ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-           }`}
-         >
-           <h1 className="text-4xl  font-bold text-green-500 mb-4 animate-pulse">
-             🚧 This Page is Not Ready Yet
-           </h1>
-           <p className="text-lg text-gray-300">
-             Please revisit later. We're working hard to make this page awesome!
-           </p>
-           <div className="mt-8 flex justify-center">
-             <div className="w-16 h-16 border-4 border-blue-500 rounded-full animate-spin border-t-transparent"></div>
-           </div>
-         </div>
+  const jobs = useLoaderData();
+  console.log(jobs)
+
+  return (
+    <div className='grid md:grid-cols-3 gap-4 my-5'>
+  {
+    jobs.map(job=>{
+      const {id,logo,job_title,company_name,remote_or_onsite,location,job_type,salary}=job;
+
+      return(
+        <div key={id} className="card card-compact bg-base-100 max-h-96 my-10  shadow-xl">
+      <figure>
+        <img className='w-72'
+          src={logo}
+          alt="logo" />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{job_title}</h2>
+        <p> {company_name} </p>
+        <div>
+            <button className='px-5 py-2 mr-4 text-[#7E90FE] font-extrabold border rounded border-[#7E90FE]'>{remote_or_onsite}</button>
+            <button className='px-5 py-2 text-[#7E90FE] font-extrabold border rounded border-[#7E90FE]'>{job_type}</button>
+        </div>
+       
+       <div className='my-4 flex '>
+            <h2  className='flex mr-5 ' > <MdOutlineLocationOn className='text-2xl mr-2' ></MdOutlineLocationOn> {location} </h2>
+            
+        
+       
+            <h2 className='flex'><PiCurrencyCircleDollar className='text-2xl mr-2' /> {salary}
+            </h2>
+        
        </div>
-     );
-   };
- 
+        <div className="card-actions ">
+        <Link to={`/job/${id}`}>  <button className="btn btn-primary">View Details</button></Link>
+        </div>
+      </div>
+    </div>
+      )
+      
+    })
+  }
+    </div>
+  )
+}
 
 export default Jobs
